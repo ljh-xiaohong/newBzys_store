@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginBottom="9dp"
+            android:textColor="@color/black3"
+            android:textSize="17sp"
+            android:text="拨打电话"
+            />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="#f0f0f0" />
+
+
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="13.7dp"
+            android:layout_marginBottom="13.7dp"
+            android:textSize="14sp"
+            android:textColor="@color/black3"
+            android:layout_marginLeft="14dp"
+            android:text="400-8891884"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60.0dip"
+            android:layout_gravity="bottom"
+            android:background="@null"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/negativeButton"
+                android:layout_width="0dp"
+                android:layout_height="40.0dip"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:text="取消" />
+
+            <Button
+                android:id="@+id/positiveButton"
+                android:layout_width="0dp"
+                android:layout_height="40.0dip"
+                android:layout_weight="1"
+                android:background="@null"
+                android:textColor="@color/edt_hint_orange"
+                android:gravity="center"
+                android:text="确定" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

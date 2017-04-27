@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150px"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@drawable/line_bottom">
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/item_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp" >
+        <ImageView 
+	        android:id="@+id/user_icon"
+	        android:layout_width="78px"
+	        android:layout_height="84px"
+	        android:layout_marginLeft="30px"
+	        android:layout_marginRight="30px"
+			android:layout_marginTop="33px"
+			android:layout_marginBottom="33px"
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentStart="true"
+	        android:src="@mipmap/account_book"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+			android:textSize="45px"
+            android:text="姓名"
+            android:textColor="#333333"
+            android:layout_toEndOf="@+id/user_icon"/>
+        <com.zhy.autolayout.AutoRelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="0dp"
+            android:gravity="center_vertical">
+            <TextView
+	            android:id="@+id/phone"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_toLeftOf="@+id/arrow"
+				android:textSize="45px"
+	            android:layout_marginRight="30px"
+	            android:layout_centerVertical="true" />
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="33px"
+                android:layout_height="58px"
+                android:src="@mipmap/home_chevron"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30px"/>
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/item_right"
+        android:layout_width="420px"
+        android:layout_height="match_parent"
+        android:background="#e95429"
+        android:onClick="delete">
+
+        <TextView
+            android:id="@+id/tvRightItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+			android:textSize="45px"
+            android:text="删除"
+            android:textColor="#6b3416"/>
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/window_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F9F9F9"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_handled"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:background="#FFFFFF"
+            android:textSize="51px"
+            android:text="已处理"
+            android:textColor="#333333" />
+        <Button
+            android:id="@+id/btn_removed"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:background="#FFFFFF"
+            android:textSize="51px"
+            android:text="已撤单"
+            android:textColor="#333333" />
+        <Button
+            android:id="@+id/btn_selled"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:background="#FFFFFF"
+            android:textSize="51px"
+            android:text="已售完"
+            android:textColor="#333333" />
+        <Button
+            android:id="@+id/btn_cencel"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:layout_marginTop="20px"
+            android:background="#FFFFFF"
+            android:textSize="51px"
+            android:text="取消"
+            android:textColor="#333333" />
+    </LinearLayout>
+</LinearLayout>

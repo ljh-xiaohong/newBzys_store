@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_view" />
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="147px"
+        android:background="@color/menu_bg"
+        android:orientation="horizontal" >
+        <!-- 主页 -->
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/layout_menu_home"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="clickMenu"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+            <ImageView
+                android:id="@+id/iv_menu_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/menu_home"
+                android:contentDescription="@string/app_name" />
+            <TextView
+                android:id="@+id/tv_menu_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_home"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/menu_nomarl"
+                android:textSize="48px" />
+        </com.zhy.autolayout.AutoLinearLayout>
+        <!-- 订单 -->
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/layout_menu_order"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="clickMenu"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+            <ImageView
+                android:id="@+id/iv_menu_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/menu_order"
+                android:contentDescription="@string/app_name" />
+            <TextView
+                android:id="@+id/tv_menu_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_order"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/menu_nomarl"
+                android:textSize="48px" />
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

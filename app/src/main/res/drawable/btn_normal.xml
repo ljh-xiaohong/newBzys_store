@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 这里定义一个带圆角，边框颜色为白色 -->
+    <item>
+        <shape>
+            <solid android:color="#ff9c00"/>
+            <corners
+                android:bottomLeftRadius="22dp"
+                android:bottomRightRadius="22dp"
+                android:topLeftRadius="22dp"
+                android:topRightRadius="22dp" />
+        </shape>
+    </item>
+</layer-list>

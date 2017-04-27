@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/order_layout"
+    android:layout_height="280px"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/img_order_list"
+        android:layout_margin="20px"
+        android:layout_width="240px"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitXY"
+        android:layout_height="240px" />
+
+    <ImageView
+        android:id="@+id/img_order_staue"
+        android:layout_margin="20px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/removed"/>
+
+        <TextView
+            android:id="@+id/tv_order_list_name"
+            android:text="中国画"
+            android:textColor="@color/black3"
+            android:layout_marginTop="20px"
+            android:textSize="39px"
+            android:layout_toRightOf="@id/img_order_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/iv_goods_type_arrow_down"
+        android:layout_width="45px"
+        android:layout_height="45px"
+        android:layout_marginRight="40px"
+        android:layout_marginTop="20px"
+        android:focusable="false"
+        android:src="@mipmap/chevron_sign_down"
+        android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/tv_order_list_id"
+            android:text="小红帽"
+            android:layout_toRightOf="@+id/img_order_list"
+            android:layout_below="@id/tv_order_list_name"
+            android:textSize="30px"
+            android:layout_marginTop="38px"
+            android:textColor="@color/black3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <TextView
+            android:id="@+id/tv_order_list_number"
+            android:text="收款"
+            android:layout_marginLeft="20px"
+            android:textColor="@color/black3"
+            android:layout_marginTop="38px"
+            android:textSize="30px"
+            android:layout_toRightOf="@+id/tv_order_list_id"
+            android:layout_below="@id/tv_order_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_order_list_money"
+        android:text="订单号：10010"
+        android:layout_marginTop="25px"
+        android:textColor="@color/black6"
+        android:textSize="34px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/img_order_list"
+        android:layout_below="@id/tv_order_list_id" />
+    <TextView
+        android:id="@+id/tv_order_list_remark"
+        android:text="订单号：10010"
+        android:textColor="@color/black6"
+        android:textSize="27px"
+        android:layout_marginBottom="20px"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/img_order_list"
+         />
+
+    <ImageView
+        android:id="@+id/img_order_statue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/saled"
+        android:layout_margin="20px"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/tv_order_list_remark"
+         />
+</com.zhy.autolayout.AutoRelativeLayout>

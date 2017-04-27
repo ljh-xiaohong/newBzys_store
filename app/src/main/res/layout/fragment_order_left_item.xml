@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.zhy.autolayout.AutoLinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fragment_order_left_item_nor_bg"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="10px"
+            android:layout_height="fill_parent"
+            android:visibility="gone"
+            android:background="@color/red"/>
+        <com.zhy.autolayout.AutoLinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_type_number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20px"
+            android:paddingTop="20px"
+            android:textColor="@color/black3"
+            android:textSize="36px"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/tv_type_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20px"
+            android:paddingTop="20px"
+            android:textColor="@color/black3"
+            android:maxEms="10"
+            android:ellipsize="end"
+            android:textSize="36px"
+            android:gravity="center"/>
+            </com.zhy.autolayout.AutoLinearLayout >
+    </com.zhy.autolayout.AutoLinearLayout >
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#f0f0f0"
+        android:contentDescription="@null"
+        android:visibility="visible" />
+</com.zhy.autolayout.AutoLinearLayout >

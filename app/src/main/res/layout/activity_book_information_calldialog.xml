@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <com.zhy.autolayout.AutoFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="630px"
+        android:layout_height="223px"
+        android:orientation="vertical"
+        >
+
+        <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dip"
+        android:layout_gravity="bottom"
+        android:background="@null"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/positiveButton"
+            android:layout_width="114.0dip"
+            android:layout_height="40.0dip"
+            android:background="@null"
+            android:gravity="center"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/negativeButton"
+            android:layout_width="114.0dip"
+            android:layout_height="40.0dip"
+            android:layout_marginLeft="20.0dip"
+            android:background="@null"
+            android:gravity="center"
+            android:text="取消" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27px"
+                android:layout_marginLeft="42px"
+                android:layout_marginBottom="27px"
+                android:textColor="@color/black3"
+                android:textSize="51px"
+                android:text="拨打电话"
+                android:visibility="visible" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="#f0f0f0" />
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="27px"
+                    android:layout_marginBottom="27px"
+                    android:textSize="42px"
+                    android:textColor="@color/black3"
+                    android:layout_marginLeft="42px"
+                    android:text="400-8891884"/>
+
+                <ImageView
+                    android:id="@+id/imgBtn_call"
+                    android:src="@mipmap/telephonehandler"
+                    android:background="@null"
+                    android:layout_marginTop="41px"
+                    android:layout_marginBottom="41px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="46px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoFrameLayout>
