@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="30px">
-        <Button 
+        <Button
 	        android:id="@+id/btn_index"
 	        android:layout_width="105px"
 	        android:layout_height="99px"
@@ -35,7 +35,7 @@
             android:textSize="45px"
             android:textColor="#333333"
             android:layout_toEndOf="@+id/btn_index"/>
-        <com.zhy.autolayout.AutoRelativeLayout 
+        <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_alignParentEnd="true"
@@ -73,7 +73,7 @@
             android:layout_weight="1"
             android:layout_height="fill_parent"
             android:orientation="horizontal"
-            android:paddingStart="48px"
+            android:paddingStart="42px"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
             android:onClick="edit">
@@ -96,7 +96,7 @@
             android:layout_weight="1"
             android:layout_height="fill_parent"
             android:orientation="horizontal"
-            android:paddingStart="48px"
+            android:paddingStart="35px"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
             android:onClick="sortUp">
@@ -118,7 +118,7 @@
             android:layout_weight="1"
             android:layout_height="fill_parent"
             android:orientation="horizontal"
-            android:paddingStart="48px"
+            android:paddingStart="35px"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
             android:onClick="delete">

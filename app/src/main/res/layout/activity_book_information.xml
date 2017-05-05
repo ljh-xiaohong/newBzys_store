@@ -52,21 +52,10 @@
             android:layout_width="match_parent"
             android:layout_height="330px"
             android:background="@drawable/book_information_bg">
-            <EditText
-                android:id="@+id/edt_book_information"
-                android:layout_width="match_parent"
-                android:hint="请输入意见与建议。。。"
-                android:background="@null"
-                android:layout_marginTop="25px"
-                android:layout_marginLeft="30px"
-                android:layout_marginRight="30px"
-                android:textSize="36px"
-                android:textColorHint="@color/edt_hint_gray"
-                android:layout_height="wrap_content" />
             <com.zhy.autolayout.AutoLinearLayout
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:orientation="horizontal"
                 android:layout_marginRight="30px"
                 android:layout_height="wrap_content">
@@ -86,6 +75,20 @@
                     android:textColorHint="@color/edt_hint_gray"
                     android:text="300"/>
             </com.zhy.autolayout.AutoLinearLayout>
+            <EditText
+                android:id="@+id/edt_book_information"
+                android:layout_width="match_parent"
+                android:hint="请输入意见与建议。。。"
+                android:background="@null"
+                android:layout_above="@id/tv_counts"
+                android:layout_marginTop="25px"
+                android:layout_marginLeft="30px"
+                android:layout_marginRight="30px"
+                android:layout_marginBottom="45px"
+                android:textSize="36px"
+                android:textColorHint="@color/edt_hint_gray"
+                android:layout_height="wrap_content" />
+
         </com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoRelativeLayout
             android:id="@+id/layout_call"

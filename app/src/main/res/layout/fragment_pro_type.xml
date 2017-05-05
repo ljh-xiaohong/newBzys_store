@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     xmlns:sp="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white">
-	<com.bapm.bzys.newBzys.widget.ZrcListView
+	<com.bapm.bzys.newBzys_store.widget.ZrcListView
         android:id="@+id/zListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +13,7 @@
         android:dividerHeight="1dp"
         android:divider="#e1e1e1"
         sp:right_width="0dp">
-    </com.bapm.bzys.newBzys.widget.ZrcListView>
+    </com.bapm.bzys.newBzys_store.widget.ZrcListView>
     <ImageView
         android:id="@+id/hint_img"
         android:layout_width="wrap_content"

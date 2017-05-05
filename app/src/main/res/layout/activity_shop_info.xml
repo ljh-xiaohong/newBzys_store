@@ -170,6 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:text="登录"
+            android:visibility="gone"
             android:textColor="@android:color/white"
             android:textSize="42px"
             android:background="@null"

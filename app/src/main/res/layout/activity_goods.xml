@@ -50,17 +50,22 @@
                 android:orientation="vertical">
             </com.zhy.autolayout.AutoLinearLayout>
         </ScrollView>
-        <com.bapm.bzys.newBzys.widget.ZrcListView
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/srl"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <com.bapm.bzys.newBzys_store.widget.ZrcListView
 	        android:id="@+id/zListView"
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent"
-	        android:layout_weight="1" 
 	        android:background="#f9f9f9"
 	        android:scrollbars="none"
 	        android:dividerHeight="1dp"
 	        android:divider="#e1e1e1"
 	        sp:right_width="60dp">
-	    </com.bapm.bzys.newBzys.widget.ZrcListView>
+	    </com.bapm.bzys.newBzys_store.widget.ZrcListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
     </com.zhy.autolayout.AutoLinearLayout>
     <include
         android:id="@+id/layout_menu"

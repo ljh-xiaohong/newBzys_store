@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/transparent"
     android:onClick="close">
-    <com.bapm.bzys.newBzys.widget.SmoothImageButton
+    <com.bapm.bzys.newBzys_store.widget.SmoothImageButton
         android:id="@+id/iv_qrcode"
         android:layout_width="180dp"
         android:layout_height="180dp"

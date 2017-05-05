@@ -15,16 +15,62 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
+    lintOptions{
         abortOnError false
     }
-    buildTypes {
+    signingConfigs{
+        debug{
+            storeFile file("C:/Users/fs-ljh/.android/debug.keystore")
+        }
         release {
+            storeFile file("myKeyStore.jks")
+            storePassword "520cyl"
+            keyAlias "newBzys"
+            keyPassword "520cyl"
+        }
+    }
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def fileName = outputFile.name.replace(".apk", "-${defaultConfig.versionName}.apk")
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+    buildTypes {
+        debug{
+            buildConfigField "boolean","LOG_DEBUG","true"
+            //启动混淆
             minifyEnabled false
+            //zipAlign
+            zipAlignEnabled false
+            //移除无用的Resources
+//            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            buildConfigField "boolean","LOG_DEBUG","false"
+            //启动混淆
+            minifyEnabled false
+            //zipAlign
+            zipAlignEnabled true
+            //移除无用的Resources
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -36,4 +82,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.zhy:autolayout:1.4.5'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
+    compile 'com.github.bumptech.glide:glide:3.8.0'
 }

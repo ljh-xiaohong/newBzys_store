@@ -7,7 +7,7 @@
     android:clipToPadding="true"
     android:background="#ff9c00">
 
-    <com.bapm.bzys.newBzys.widget.ZrcListView
+    <com.bapm.bzys.newBzys_store.widget.ZrcListView
         android:id="@+id/zListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,7 @@
         android:background="#f9f9f9"
         android:scrollbars="none"
         sp:right_width="60dp" >
-    </com.bapm.bzys.newBzys.widget.ZrcListView>
+    </com.bapm.bzys.newBzys_store.widget.ZrcListView>
     <include
         android:id="@+id/layout_menu"
         layout="@layout/activity_main_menu"

@@ -17,7 +17,7 @@
         android:gravity="center"
         android:padding="10dp">
 
-        <com.bapm.bzys.newBzys.widget.DadanArcLoader
+        <com.bapm.bzys.newBzys_store.widget.DadanArcLoader
             android:id="@+id/loader"
             android:layout_centerInParent="true"
             android:layout_width="60dp"

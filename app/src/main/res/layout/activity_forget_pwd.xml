@@ -75,17 +75,19 @@
 	            android:hint="请输入您注册手机号"
 	            android:textColorHint="#999999"
 				android:textSize="45px"/>
-	        <Button 
-	            android:id="@+id/btn_check"
-	            android:layout_width="246px"
-	            android:layout_height="90px"
-	            android:layout_alignParentEnd="true"
-	            android:text="获取验证码"
-	            android:onClick="validateCode"
-	            android:textSize="45px"
-	            android:textColor="@android:color/white"
-	            android:layout_centerVertical="true"
-	            android:background="#6B3416"/>
+			<Button
+				android:id="@+id/btn_check"
+				android:layout_width="wrap_content"
+				android:layout_height="90px"
+				android:text="获取验证码"
+				android:paddingStart="15px"
+				android:paddingEnd="15px"
+				android:onClick="validateCode"
+				android:textSize="45px"
+				android:textColor="@android:color/white"
+				android:background="@drawable/btn_timer_verify_code_normal"
+				android:layout_alignParentTop="true"
+				android:layout_alignParentEnd="true" />
         </com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoRelativeLayout
 	        android:id="@+id/layout_code"

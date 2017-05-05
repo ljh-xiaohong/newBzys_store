@@ -28,7 +28,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:singleLine="true"
             android:textSize="14sp"
             android:textColor="@android:color/primary_text_light"
 			android:alpha="0.54"/>

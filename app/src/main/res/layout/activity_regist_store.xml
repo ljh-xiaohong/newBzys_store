@@ -14,7 +14,7 @@
         <TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="资料填写"
+            android:text="申请人入驻资料"
             android:textColor="@android:color/white"
             android:textSize="51px"
             android:layout_centerInParent="true"/>
@@ -37,36 +37,38 @@
         android:layout_below="@+id/layout_title_bar"
         android:orientation="vertical"
         android:background="#e1e1e1">
-        <com.zhy.autolayout.AutoRelativeLayout
-	        android:id="@+id/layout_store_name"
-	        android:layout_width="fill_parent"
-			android:layout_height="150px"
-			android:padding="30px"
-			android:layout_marginTop="42px"
-	        android:orientation="vertical"
-	        android:gravity="center_vertical"
-	        android:background="@drawable/line_bottom">
-	        <TextView
-	            android:id="@+id/tv_store_name"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_centerVertical="true"
-	            android:text="姓       名"
-	            android:textColor="#333333"
-	            android:textSize="45px"/>
-	        <EditText
-	            android:id="@+id/ed_store_name"
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:layout_toEndOf="@+id/tv_store_name"
-	            android:background="@android:color/white"
-	            android:layout_marginStart="60px"
-	            android:layout_centerVertical="true"
-	            android:hint="必填/请输入本人真实姓名"
-	            android:textColorHint="#999999"
-	            android:textSize="45px"/>
+
+		<com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/layout_store_name"
+            android:layout_width="fill_parent"
+            android:layout_height="150px"
+            android:padding="30px"
+            android:layout_marginTop="42px"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:background="@drawable/line_bottom">
+            <TextView
+                android:id="@+id/tv_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="姓       名"
+                android:textColor="#333333"
+                android:textSize="45px"/>
+            <EditText
+                android:id="@+id/ed_store_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/tv_store_name"
+                android:background="@android:color/white"
+                android:layout_marginStart="60px"
+                android:layout_centerVertical="true"
+                android:hint="必填/请输入本人真实姓名"
+                android:textColorHint="#999999"
+                android:textSize="45px"/>
         </com.zhy.autolayout.AutoRelativeLayout>
-        <com.zhy.autolayout.AutoRelativeLayout
+
+		<com.zhy.autolayout.AutoRelativeLayout
 	        android:id="@+id/layout_phone"
 	        android:layout_width="fill_parent"
 			android:layout_height="150px"
@@ -94,19 +96,21 @@
 	            android:hint="必填/请输入本人在用手机号码"
 	            android:textColorHint="#999999"
 	             android:textSize="45px"/>
-	        <Button 
-	            android:id="@+id/btn_check"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_alignParentEnd="true"
-	            android:padding="8dp"
-	            android:text="获取验证码"
-	            android:onClick="getCode"
-	            android:textSize="12sp"
-	            android:textColor="@android:color/white"
-	            android:layout_centerVertical="true"
-	            android:background="@drawable/btn_timer_verify_code_normal"/>
-        </com.zhy.autolayout.AutoRelativeLayout>
+
+			<Button
+                android:id="@+id/btn_check"
+				android:layout_width="wrap_content"
+				android:layout_height="90px"
+                android:text="获取验证码"
+				android:paddingStart="15px"
+				android:paddingEnd="15px"
+                android:onClick="getCode"
+                android:textSize="45px"
+                android:textColor="@android:color/white"
+				android:background="@drawable/btn_timer_verify_code_normal"
+				android:layout_alignParentTop="true"
+				android:layout_alignParentEnd="true" />
+		</com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoRelativeLayout
 	        android:id="@+id/layout_code"
 	        android:layout_width="fill_parent"

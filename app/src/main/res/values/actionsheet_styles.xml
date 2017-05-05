@@ -14,9 +14,9 @@
         <!--&ndash;&gt;-->
     <!--</style>-->
 
-    <!-- Application theme. -->
+     <!--Application theme.-->
     <!--<style name="AppTheme" parent="AppBaseTheme">-->
-        <!--&lt;!&ndash; <item name="actionSheetStyle">@style/ActionSheetStyleIOS6</item> &ndash;&gt;-->
+         <!--<item name="actionSheetStyle">@style/ActionSheetStyleIOS6</item>-->
     <!--</style>-->
 
 </resources>

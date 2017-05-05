@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"  
 	android:clipToPadding="true"
+	android:id="@+id/choose_layout"
 	android:background="#ff9c00"
     android:orientation="vertical">
     <com.zhy.autolayout.AutoRelativeLayout
