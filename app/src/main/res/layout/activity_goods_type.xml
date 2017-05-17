@@ -28,6 +28,12 @@
             android:layout_centerInParent="true"/>
     </com.zhy.autolayout.AutoRelativeLayout>
     <!--         sp:right_width="60dp" -->
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl"
+        android:layout_weight="1"
+        android:layout_below="@id/layout_title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <com.bapm.bzys.newBzys_store.widget.ZrcListView
         android:id="@+id/zListView"
         android:layout_width="match_parent"
@@ -37,6 +43,7 @@
         android:layout_below="@+id/layout_title_bar"
         android:background="@color/white">
     </com.bapm.bzys.newBzys_store.widget.ZrcListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
     <include
         android:id="@+id/layout_menu"
         layout="@layout/activity_main_menu"

@@ -29,6 +29,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -71,10 +73,10 @@ public class ActivityAdvert extends BaseActivity implements Function,OnClickList
 		listView.setDividerHeight(2);
 		listView.setDivider(new ColorDrawable(getResources().getColor(R.color.black)));
 		// 设置下拉刷新的样式（可选，但如果没有Header则无法下拉刷新）
-		SimpleHeader header = new SimpleHeader(this);
-		header.setTextColor(0xff0066aa);
-		header.setCircleColor(0xff33bbee);
-		listView.setHeadable(header);
+//		SimpleHeader header = new SimpleHeader(this);
+//		header.setTextColor(0xff0066aa);
+//		header.setCircleColor(0xff33bbee);
+//		listView.setHeadable(header);
 
 //		// 设置加载更多的样式（可选）
 //		SimpleFooter footer = new SimpleFooter(this);
@@ -86,14 +88,50 @@ public class ActivityAdvert extends BaseActivity implements Function,OnClickList
 		listView.setItemAnimForBottomIn(R.anim.bottomitem_in);
 
 		// 下拉刷新事件回调（可选）
-		listView.setOnRefreshStartListener(new ZrcListView.OnStartListener() {
-			@Override
-			public void onStart() {
-				refresh();
-			}
-		});
+//		listView.setOnRefreshStartListener(new ZrcListView.OnStartListener() {
+//			@Override
+//			public void onStart() {
+//				refresh();
+//			}
+//		});
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(this);
+		setRefresh();
+	}
+	/*
+* 设置下拉刷新
+* */
+	SwipeRefreshLayout swipeRefreshView;
+	private void setRefresh() {
+		// 不能在onCreate中设置，这个表示当前是刷新状态，如果一进来就是刷新状态，SwipeRefreshLayout会屏蔽掉下拉事件
+		//swipeRefreshLayout.setRefreshing(true);
+
+		// 设置颜色属性的时候一定要注意是引用了资源文件还是直接设置16进制的颜色，因为都是int值容易搞混
+		// 设置下拉进度的背景颜色，默认就是白色的
+		swipeRefreshView= (SwipeRefreshLayout) findViewById(R.id.srl);
+		swipeRefreshView.setProgressBackgroundColorSchemeResource(android.R.color.white);
+		// 设置下拉进度的主题颜色
+		swipeRefreshView.setColorSchemeResources(R.color.edt_hint_orange, R.color.commit_orange);
+
+		// 下拉时触发SwipeRefreshLayout的下拉动画，动画完毕之后就会回调这个方法
+		swipeRefreshView.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+			@Override
+			public void onRefresh() {
+
+				// 这里是主线程
+				// 一些比较耗时的操作，比如联网获取数据，需要放到子线程去执行
+				// TODO 获取数据
+				new Handler().postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						Map<String, String> params = new HashMap<String, String>();
+						initData();
+						// 加载完数据设置为不刷新状态，将下拉进度收起来
+						swipeRefreshView.setRefreshing(false);
+					}
+				}, 1200);
+			}
+		});
 	}
 	public void initData(){
 		listView.hiddenRight(listView.mPreItemView);

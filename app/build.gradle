@@ -51,16 +51,16 @@ android {
             //启动混淆
             minifyEnabled false
             //zipAlign
-            zipAlignEnabled false
+            zipAlignEnabled true
             //移除无用的Resources
-//            shrinkResources false
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
         release {
             buildConfigField "boolean","LOG_DEBUG","false"
             //启动混淆
-            minifyEnabled false
+            minifyEnabled true
             //zipAlign
             zipAlignEnabled true
             //移除无用的Resources

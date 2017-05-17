@@ -96,7 +96,7 @@ public class ActivityAccountChildAdd extends BaseActivity implements Function,On
 		case DadanUrl.USER_CHILD_ADD_URL_CODE:{
 			btn_sure.setEnabled(true);
 			handleChildAdd(result);
-			return;
+			break;
 		}
 		case DadanUrl.USER_CHILD_DETAIL_URL_CODE:{
 			String subname = result.optString("Name");
@@ -105,7 +105,7 @@ public class ActivityAccountChildAdd extends BaseActivity implements Function,On
 			ed_name.setText(subname);
 			ed_account.setText(suphone);
 			ed_pwd.setText(suPwd);
-			return;
+			break;
 		}
 		default:
 			break;
@@ -126,7 +126,7 @@ public class ActivityAccountChildAdd extends BaseActivity implements Function,On
 	}
 	@Override
 	public void onSuccess(int requstCode, JSONArray result) {
-		
+		loadDialog.dismiss();
 	}
 	@Override
 	public void onClick(View v) {
