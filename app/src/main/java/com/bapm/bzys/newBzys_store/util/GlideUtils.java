@@ -87,7 +87,7 @@ public class GlideUtils {
             Glide.with(context)
                     .load(url)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .error(R.mipmap.qrcode_default)
+                    .error(R.mipmap.img_fairl)
                     .placeholder(defaultImage)
                     .crossFade()
                     .override(width, width)

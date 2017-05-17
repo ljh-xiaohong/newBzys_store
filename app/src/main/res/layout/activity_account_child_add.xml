@@ -91,7 +91,7 @@
 	            android:layout_marginStart="60px"
 	            android:layout_centerVertical="true"
 	            android:hint="必填/请输入手机号码或工号"
-	            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	            android:inputType="number"
 	            android:textColorHint="#999999"
 	            android:textSize="45px"/>
 	    </com.zhy.autolayout.AutoRelativeLayout>

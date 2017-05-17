@@ -122,7 +122,7 @@
 	            android:layout_centerVertical="true"
 	            android:editable="false"
 	            android:gravity="center_vertical"
-	            android:text="请选择"
+	            android:hint="请选择"
 	            android:textColorHint="#999999"
 	            android:textColor="#333333"
 	            android:textSize="45px"/>

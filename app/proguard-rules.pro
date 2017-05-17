@@ -1,199 +1,142 @@
-# Add project specific ProGuard rules here.
-# By default, the flags in this file are appended to flags specified
-# in C:\Users\fs-ljh\AppData\Local\Android\Sdk/tools/proguard/proguard-android.txt
-# You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+#==================================【基本配置】==================================
 
-# Add any project specific keep options here:
+# 代码混淆压缩比，在0~7之间，默认为5,一般不下需要修改
+-optimizationpasses 5
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-##指定代码的压缩级别
-#-optimizationpasses 5
-#
-##包明不混合大小写
-#-dontusemixedcaseclassnames
-#
-##不去忽略非公共的库类
-#-dontskipnonpubliclibraryclasses
-#
-# #优化  不优化输入的类文件
-#-dontoptimize
-#
-# #预校验
-#-dontpreverify
-#
-# #混淆时是否记录日志
-#-verbose
-#
-# # 混淆时所采用的算法
-#-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
-#
-##保护注解
-#-keepattributes *Annotation*
-#
-## 保持哪些类不被混淆
-#-keep public class * extends android.app.Fragment
-#-keep public class * extends android.app.Activity
-#-keep public class * extends android.app.Application
-#-keep public class * extends android.app.Service
-#-keep public class * extends android.content.BroadcastReceiver
-#-keep public class * extends android.content.ContentProvider
-#-keep public class * extends android.app.backup.BackupAgentHelper
-#-keep public class * extends android.preference.Preference
-#-keep public class com.android.vending.licensing.ILicensingService
-##如果有引用v4包可以添加下面这行
-#-keep public class * extends android.support.v4.app.Fragment
-#
-#
-#
-#
-##忽略警告
-#-ignorewarning
-#
-######################记录生成的日志数据,gradle build时在本项目根目录输出################
-#
-##apk 包内所有 class 的内部结构
-#-dump class_files.txt
-##未混淆的类和成员
-#-printseeds seeds.txt
-##列出从 apk 中删除的代码
-#-printusage unused.txt
-##混淆前后的映射
-#-printmapping mapping.txt
-#
-######################记录生成的日志数据，gradle build时 在本项目根目录输出-end################
-#
-#
-#################混淆保护自己项目的部分代码以及引用的第三方jar包library#########################
-##-libraryjars libs/android-async-http-1.4.9.jar
-##-libraryjars libs/gson-2.2.4.jar
-##-libraryjars libs/happy-dns-0.2.9.jar
-##-libraryjars libs/okhttp-3.6.0.jar
-##-libraryjars libs/okio-1.10.0.jar
-##-libraryjars libs/org.apache.http.legacy.jar
-##-libraryjars libs/qiniu-android-sdk-7.3.3.jar
-##-libraryjars libs/xUtils-2.6.14.jar
-#
-#
-##三星应用市场需要添加:sdk-v1.0.0.jar,look-v1.0.1.jar
-##-libraryjars libs/sdk-v1.0.0.jar
-##-libraryjars libs/look-v1.0.1.jar
-#
-#
-##友盟
-#-keep class com.umeng.**{*;}
-#
-##支付宝
-#-keep class com.alipay.android.app.IAliPay{*;}
-#-keep class com.alipay.android.app.IAlixPay{*;}
-#-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
-#-keep class com.alipay.android.app.lib.ResourceMap{*;}
-#
-#
-##信鸽推送
-#-keep class com.tencent.android.tpush.**  {* ;}
-#-keep class com.tencent.mid.**  {* ;}
-#
-#
-##自己项目特殊处理代码
-#
-##忽略警告
-#-dontwarn com.veidy.mobile.common.**
-##保留一个完整的包
-#-keep class com.veidy.mobile.common.** {
-#    *;
-# }
-#
-#-keep class  com.veidy.activity.login.WebLoginActivity{*;}
-#-keep class  com.veidy.activity.UserInfoFragment{*;}
-#-keep class  com.veidy.activity.HomeFragmentActivity{*;}
-#-keep class  com.veidy.activity.CityActivity{*;}
-#-keep class  com.veidy.activity.ClinikActivity{*;}
-#
-##如果引用了v4或者v7包
-#-dontwarn android.support.**
-#
-#############混淆保护自己项目的部分代码以及引用的第三方jar包library-end##################
-#
-#-keep public class * extends android.view.View {
-#    public <init>(android.content.Context);
-#    public <init>(android.content.Context, android.util.AttributeSet);
-#    public <init>(android.content.Context, android.util.AttributeSet, int);
-#    public void set*(...);
-#}
-#
-##保持 native 方法不被混淆
-#-keepclasseswithmembernames class * {
-#    native <methods>;
-#}
-#
-##保持自定义控件类不被混淆
-#-keepclasseswithmembers class * {
-#    public <init>(android.content.Context, android.util.AttributeSet);
-#}
-#
-##保持自定义控件类不被混淆
-#-keepclasseswithmembers class * {
-#    public <init>(android.content.Context, android.util.AttributeSet, int);
-#}
-##保持自定义控件类不被混淆
-#-keepclassmembers class * extends android.app.Activity {
-#   public void *(android.view.View);
-#}
-#
-##保持 Parcelable 不被混淆
-#-keep class * implements android.os.Parcelable {
-#  public static final android.os.Parcelable$Creator *;
-#}
-#
-##保持 Serializable 不被混淆
-#-keepnames class * implements java.io.Serializable
-#
-##保持 Serializable 不被混淆并且enum 类也不被混淆
-#-keepclassmembers class * implements java.io.Serializable {
-#    static final long serialVersionUID;
-#    private static final java.io.ObjectStreamField[] serialPersistentFields;
-#    !static !transient <fields>;
-#    !private <fields>;
-#    !private <methods>;
-#    private void writeObject(java.io.ObjectOutputStream);
-#    private void readObject(java.io.ObjectInputStream);
-#    java.lang.Object writeReplace();
-#    java.lang.Object readResolve();
-#}
-#
-##保持枚举 enum 类不被混淆 如果混淆报错，建议直接使用上面的 -keepclassmembers class * implements java.io.Serializable即可
-##-keepclassmembers enum * {
-##  public static **[] values();
-##  public static ** valueOf(java.lang.String);
-##}
-#
-#-keepclassmembers class * {
-#    public void *ButtonClicked(android.view.View);
-#}
-#
-##不混淆资源类
-#-keepclassmembers class **.R$* {
-#    public static <fields>;
-#}
-#
-##避免混淆泛型 如果混淆报错建议关掉
-##–keepattributes Signature
-#
-##移除log 测试了下没有用还是建议自己定义一个开关控制是否输出日志
-#-assumenosideeffects class android.util.Log {
-#    public static boolean isLoggable(java.lang.String, int);
-#    public static int v(...);
-#    public static int i(...);
-#    public static int w(...);
-#    public static int d(...);
-#    public static int e(...);
-#}
+# 混淆时不使用大小写混合，混淆后的类名为小写
+# windows下的同学还是加入这个选项吧(windows大小写不敏感)
+-dontusemixedcaseclassnames
+
+# 指定不去忽略非公共的库的类
+# 默认跳过，有些情况下编写的代码与类库中的类在同一个包下，并且持有包中内容的引用，此时就需要加入此条声明
+-dontskipnonpubliclibraryclasses
+
+# 指定不去忽略非公共的库的类的成员
+-dontskipnonpubliclibraryclassmembers
+
+# 不做预检验，preverify是proguard的四个步骤之一
+# Android不需要preverify，去掉这一步可以加快混淆速度
+-dontpreverify
+
+# 有了verbose这句话，混淆后就会生成映射文件
+-verbose
+#apk 包内所有 class 的内部结构
+-dump class_files.txt
+#未混淆的类和成员
+-printseeds seeds.txt
+#列出从 apk 中删除的代码
+-printusage unused.txt
+#混淆前后的映射
+-printmapping mapping.txt
+
+# 指定混淆时采用的算法，后面的参数是一个过滤器
+# 这个过滤器是谷歌推荐的算法，一般不改变
+-optimizations !code/simplification/artithmetic,!field/*,!class/merging/*
+
+# 保护代码中的Annotation不被混淆
+# 这在JSON实体映射时非常重要，比如fastJson
+-keepattributes *Annotation*
+
+# 避免混淆泛型
+# 这在JSON实体映射时非常重要，比如fastJson
+-keepattributes Signature
+
+# 抛出异常时保留代码行号
+-keepattributes SourceFile,LineNumberTable
+
+#忽略警告
+-ignorewarning
+
+#==================================【项目配置】==================================
+
+# 保留所有的本地native方法不被混淆
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+# 保留了继承自Activity、Application这些类的子类
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.preference.Preference
+-keep public class * extends android.view.View
+-keep public class * extends android.database.sqlite.SQLiteOpenHelper{*;}
+
+# 如果有引用android-support-v4.jar包，可以添加下面这行
+-keep public class com.null.test.ui.fragment.** {*;}
+
+#如果引用了v4或者v7包
+-dontwarn android.support.**
+
+# 保留Activity中的方法参数是view的方法，
+# 从而我们在layout里面编写onClick就不会影响
+-keepclassmembers class * extends android.app.Activity {
+    public void * (android.view.View);
+}
+
+# 枚举类不能被混淆
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+# 保留自定义控件(继承自View)不能被混淆
+-keep public class * extends android.view.View {
+    public <init>(android.content.Context);
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+    public void set*(***);
+    *** get* ();
+}
+
+# 保留Parcelable序列化的类不能被混淆
+-keep class * implements android.os.Parcelable{
+    public static final android.os.Parcelable$Creator *;
+}
+
+# 保留Serializable 序列化的类不被混淆
+-keepclassmembers class * implements java.io.Serializable {
+   static final long serialVersionUID;
+   private static final java.io.ObjectStreamField[] serialPersistentFields;
+   !static !transient <fields>;
+   private void writeObject(java.io.ObjectOutputStream);
+   private void readObject(java.io.ObjectInputStream);
+   java.lang.Object writeReplace();
+   java.lang.Object readResolve();
+}
+
+# 对R文件下的所有类及其方法，都不能被混淆
+-keepclassmembers class **.R$* {
+    *;
+}
+
+# 对于带有回调函数onXXEvent的，不能混淆
+-keepclassmembers class * {
+    void *(**On*Event);
+}
+###排除所有注解类
+-keep class * extends java.lang.annotation.Annotation { *; }
+-keep interface * extends java.lang.annotation.Annotation { *; }
+###排除所有自定义控件
+-keep class com.bapm.bzys.newBzys_store.widget.**{*;}
+
+#==================================【三方配置】==================================
+
+# 不混淆 butterknife
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewBinder { *; }
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
+
+
+
+

@@ -7,6 +7,6 @@
     <dimen name="activity_welcome_login_heigth">44dp</dimen>
     <dimen name="activity_welcome_btn_margin_left">60dp</dimen>
     <dimen name="activity_welcome_btn_margin_right">60dp</dimen>
-    <dimen name="activity_goods_type_operate_unit_width">60dp</dimen>
+    <dimen name="activity_goods_type_operate_unit_width">160px</dimen>
     <dimen name="dialog_stroke_width">3dp</dimen>
 </resources>

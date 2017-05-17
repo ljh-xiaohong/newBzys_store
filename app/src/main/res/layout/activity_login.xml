@@ -70,10 +70,9 @@
 	            android:layout_toEndOf="@+id/tv_phone"
 	            android:background="@android:color/white"
 	            android:layout_marginStart="60px"
-                android:text="18998407379"
 	            android:layout_centerVertical="true"
 	            android:hint="请输入注册的手机号码或子账号"
-	            android:digits="0123456789:："
+				android:inputType="number"
 	            android:textColorHint="#999999"
 				android:textSize="45px"/>
 			<ImageView
@@ -109,7 +108,6 @@
 	            android:layout_marginStart="60px"
 	            android:layout_centerVertical="true"
 	            android:hint="请输入登录密码"
-				android:text="123456"
 	            android:inputType="textPassword"
 	            android:textColorHint="#999999"
 	            android:textSize="45px"/>
