@@ -5,6 +5,7 @@
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:layout_marginTop="20px"
+    android:layout_marginStart="10px"
     android:background="@color/white"
     android:layout_gravity="center">
     <com.zhy.autolayout.AutoRelativeLayout
@@ -35,7 +36,7 @@
             android:layout_toRightOf="@+id/img_order_number"
             android:layout_marginLeft="30px"
             android:layout_marginTop="16px"
-            android:textSize="39px"
+            android:textSize="42px"
             android:textColor="@color/black3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -46,7 +47,7 @@
             android:layout_toRightOf="@+id/img_order_number"
             android:layout_below="@+id/img_order_number"
             android:textColor="@color/black6"
-            android:textSize="27px"
+            android:textSize="36px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
@@ -58,14 +59,16 @@
             android:layout_marginRight="32px"
             android:gravity="center"
             android:textColor="@color/edt_hint_orange"
-            android:textSize="27px"
-            android:layout_width="110px"
-            android:layout_height="45px" />
-    </com.zhy.autolayout.AutoRelativeLayout>
+            android:textSize="36px"
+            android:layout_width="150px"
+            android:layout_height="72px" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1px"
+            android:layout_toEndOf="@+id/img_order_number"
             android:background="#f0f0f0"></View>
+    </com.zhy.autolayout.AutoRelativeLayout>
+
     <com.bapm.bzys.newBzys_store.view.nestlistview.NestFullListView
         android:id="@+id/zListView"
         android:layout_width="match_parent"
@@ -95,27 +98,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textSize="27px"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:textColor="@color/black6"
+            android:textSize="30px"
             android:layout_marginLeft="20px"
             android:text="2017/12/23 12:23:42"/>
-
-        <TextView
-            android:id="@+id/tv_order_money"
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/lay_order_money"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20px"
-            android:textSize="30px"
-            android:textColor="@color/black3"
-            android:text="金额约： ¥48000000000.99"/>
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="39px"
+                android:textColor="@color/black6"
+                android:text="金额约： "/>
+            <TextView
+                android:id="@+id/tv_order_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="39px"
+                android:textColor="@color/order_money_red"
+                android:text="48000000000.99"/>
+        </com.zhy.autolayout.AutoLinearLayout>
+
         <TextView
             android:id="@+id/tv_order_counts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/tv_order_money"
-            android:textSize="30px"
+            android:layout_toStartOf="@+id/lay_order_money"
+            android:textSize="39px"
             android:layout_marginRight="40px"
             android:textColor="@color/black3"
             android:text="总件数：110"/>
     </com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#f0f0f0"></View>
 </com.zhy.autolayout.AutoLinearLayout>

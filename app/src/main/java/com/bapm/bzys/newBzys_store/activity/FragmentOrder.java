@@ -266,11 +266,11 @@ public class FragmentOrder extends Fragment implements Function, View.OnClickLis
         holder.setText(R.id.tv_number, order.getNumericalOrder());
         holder.setText(R.id.tv_order_name, order.getConsumerNickName());
         holder.setText(R.id.tv_order_number, "订单号：" + order.getOrderNumber());
-        holder.setText(R.id.tv_order_date, order.getCreateTime());
+        holder.setText(R.id.tv_order_date, order.getCreateTime().replace(" ","\n"));
         holder.setText(R.id.tv_order_counts, "总件数：" + order.getNumbers());
         NumberFormat nf = NumberFormat.getInstance();
         nf.setGroupingUsed(false);
-        holder.setText(R.id.tv_order_money, "金额约：" + nf.format(order.getPrices()));
+        holder.setText(R.id.tv_order_money, "¥" + nf.format(order.getPrices()));
         //判断是否为已收款 10为已收款
         if (order.getOrderFormStatus().equals("10")) {
             holder.setVisible(R.id.btn_order_receipt, false);
@@ -315,7 +315,7 @@ public class FragmentOrder extends Fragment implements Function, View.OnClickLis
         holder.setText(R.id.tv_order_list_number, "数量：" + cofdsBean.getNumber());
         NumberFormat nf = NumberFormat.getInstance();
         nf.setGroupingUsed(false);
-        holder.setText(R.id.tv_order_list_money, "¥" + nf.format(cofdsBean.getPrice()));
+        holder.setText(R.id.tv_order_list_money, nf.format(cofdsBean.getPrice()));
         if (cofdsBean.getNeed() != null && !cofdsBean.getNeed().equals("")) {
             holder.setText(R.id.tv_order_list_remark, "需求：" + cofdsBean.getNeed());
         }

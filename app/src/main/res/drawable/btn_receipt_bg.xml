@@ -5,5 +5,5 @@
     <solid android:color="#FFFFFF" />
     <!-- padding: Button 里面的文字与Button边界的间隔 -->
     <corners android:radius="1.7dp"></corners>
-    <stroke android:color="@color/menu_click" android:width="0.3dp"></stroke>
+    <stroke android:color="@color/edt_hint_orange" android:width="1px"></stroke>
 </shape>

@@ -37,10 +37,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements Function {
-    @BindView(R.id.layout_title_bar)
-    AutoRelativeLayout layoutTitleBar;
-    @BindView(R.id.layout_header)
-    AutoLinearLayout layoutHeader;
     @BindView(R.id.tv_phone)
     TextView tvPhone;
     @BindView(R.id.ed_phone)

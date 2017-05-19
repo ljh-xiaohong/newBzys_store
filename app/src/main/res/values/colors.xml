@@ -312,8 +312,9 @@
     <!-- 帮助与反馈结束 -->
     <color name="province_line_border">#286faf</color>
 
-    <color name="fragment_order_left_item_nor_bg">#f9f9f9</color>
-    <color name="fragment_order_left_item_select_bg">#ffffff</color>
+    <color name="fragment_order_left_item_nor_bg">#ffffff</color>
+    <color name="fragment_order_left_item_select_bg">#f9f9f9</color>
 
     <color name="myblue">#4694db</color>
+    <color name="order_money_red">#df0707</color>
 </resources>

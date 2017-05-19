@@ -67,6 +67,7 @@
         <com.bapm.bzys.newBzys_store.view.nestlistview.NestFullListView
             android:id="@+id/zListView"
             android:layout_width="match_parent"
+            android:layout_marginStart="20px"
             android:layout_height="match_parent"
             android:orientation="vertical">
         </com.bapm.bzys.newBzys_store.view.nestlistview.NestFullListView>

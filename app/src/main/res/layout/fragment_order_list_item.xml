@@ -40,7 +40,7 @@
         android:layout_marginRight="40px"
         android:layout_marginTop="20px"
         android:focusable="false"
-        android:src="@mipmap/chevron_sign_down"
+        android:src="@mipmap/pull_down"
       />
     </com.zhy.autolayout.AutoLinearLayout>
         <TextView
@@ -66,16 +66,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/tv_order_list_money"
-        android:text="订单号：10010"
-        android:layout_marginTop="25px"
-        android:textColor="@color/black6"
-        android:textSize="34px"
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/img_order_list"
-        android:layout_below="@id/tv_order_list_id" />
+        android:layout_below="@id/tv_order_list_id"
+        android:layout_marginTop="25px"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="34px"
+            android:textColor="@color/black6"
+            android:text="¥"/>
+        <TextView
+            android:id="@+id/tv_order_list_money"
+            android:text="订单号：10010"
+            android:textColor="@color/black6"
+            android:textSize="36px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </com.zhy.autolayout.AutoLinearLayout>
     <TextView
         android:id="@+id/tv_order_list_remark"
         android:textColor="@color/black6"

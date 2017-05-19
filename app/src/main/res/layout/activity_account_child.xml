@@ -9,14 +9,13 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/srl"
         android:layout_weight="1"
-        android:layout_below="@id/layout_title_bar"
+        android:layout_below="@+id/layout_title_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <com.bapm.bzys.newBzys_store.widget.ZrcListView
         android:id="@+id/zListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/layout_title_bar"
         android:layout_above="@+id/layout_menu"
         android:background="#f9f9f9"
         android:scrollbars="none"

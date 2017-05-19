@@ -49,7 +49,7 @@ android {
         debug{
             buildConfigField "boolean","LOG_DEBUG","true"
             //启动混淆
-            minifyEnabled false
+            minifyEnabled true
             //zipAlign
             zipAlignEnabled true
             //移除无用的Resources
