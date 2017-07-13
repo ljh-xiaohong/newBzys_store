@@ -280,8 +280,6 @@ public class ActivityGoodsAdd extends BaseActivity implements Function,OnClickLi
 				break;
 		case DadanUrl.GOODS_ADD_OR_UPDATE_URL_CODE:{
 			handleGoodsAdd(result);
-			btn_sure.setEnabled(true);
-			btn_continue.setEnabled(true);
 			break;
 		}
 		case DadanUrl.GOODS_DETAIL_URL_CODE:{
@@ -452,37 +450,38 @@ public class ActivityGoodsAdd extends BaseActivity implements Function,OnClickLi
 			break;
 		}
 		case R.id.btn_sure:{
-			btn_sure.setEnabled(false);
+			loadDialog.show();
 			imm.hideSoftInputFromWindow(ed_name.getWindowToken(), 0);
 			addNext = false;
 			if(tv_status_id.equals("")){
+				loadDialog.dismiss();
 				 CustomToast.showToast(this, "请选择销售状态");
 				return;
 			}
 			if((imageKey==null||imageKey.equals(""))&&goods==null){
 				CustomToast.showToast(this, "请先上传商品图片");
-				btn_sure.setEnabled(true);
+				loadDialog.dismiss();
 				return;
 			}
 			try {
 				JSONObject params = new JSONObject();
 				if(goods!=null){
+					loadDialog.dismiss();
 					params.put("ID", goods.getId());
 				}
 				if (CommonUtil.isNull(tv_type_id.getText().toString())){
-					btn_continue.setEnabled(true);
+					loadDialog.dismiss();
 					CustomToast.showToast(ActivityGoodsAdd.this,"请选择商品大类");
 				}else if (CommonUtil.isNull(ed_name.getText().toString())){
-					btn_continue.setEnabled(true);
+					loadDialog.dismiss();
 					CustomToast.showToast(ActivityGoodsAdd.this,"名称不能为空");
 				}else if(CommonUtil.isNull(ed_no.getText().toString())){
-					btn_continue.setEnabled(true);
+					loadDialog.dismiss();
 					CustomToast.showToast(ActivityGoodsAdd.this,"编号不能为空");
 				}else if(CommonUtil.isNull(ed_price.getText().toString())){
-					btn_continue.setEnabled(true);
+					loadDialog.dismiss();
 					CustomToast.showToast(ActivityGoodsAdd.this,"售价不能为空");
 				}else {
-					loadDialog.show();
 					params.put("GoodsTypeID", tv_type_id.getText().toString());
 					params.put("GoodsSalesFlag", tv_status_id.getText().toString());
 					params.put("GoodsName", ed_name.getText().toString());
@@ -501,15 +500,16 @@ public class ActivityGoodsAdd extends BaseActivity implements Function,OnClickLi
 			break;
 		}
 		case R.id.btn_continue:{
-			btn_continue.setEnabled(false);
+			loadDialog.show();
 			addNext = true;
 			if(tv_status_id.equals("")){
+				loadDialog.dismiss();
 				 CustomToast.showToast(this, "请选择销售状态");
 				return;
 			}
 			if((imageKey==null||imageKey.equals(""))&&goods==null){
 				 CustomToast.showToast(this, "请先上传商品图片");
-				btn_continue.setEnabled(true);
+				loadDialog.dismiss();
 				return;
 			}
 			try {
@@ -518,19 +518,18 @@ public class ActivityGoodsAdd extends BaseActivity implements Function,OnClickLi
 					params.put("ID", goods.getId());
 				}
 				if (CommonUtil.isNull(tv_type_id.getText().toString())){
-					btn_continue.setEnabled(true);
+					loadDialog.dismiss();
 					CustomToast.showToast(ActivityGoodsAdd.this,"请选择商品大类");
 				}else if (CommonUtil.isNull(ed_name.getText().toString())){
-					btn_continue.setEnabled(true);
+					loadDialog.dismiss();
 					CustomToast.showToast(ActivityGoodsAdd.this,"名称不能为空");
 				}else if(CommonUtil.isNull(ed_no.getText().toString())){
-					btn_continue.setEnabled(true);
+					loadDialog.dismiss();
 					CustomToast.showToast(ActivityGoodsAdd.this,"编号不能为空");
 				}else if(CommonUtil.isNull(ed_price.getText().toString())){
-					btn_continue.setEnabled(true);
+					loadDialog.dismiss();
 					CustomToast.showToast(ActivityGoodsAdd.this,"售价不能为空");
 				}else {
-					loadDialog.show();
 					params.put("GoodsTypeID", tv_type_id.getText().toString());
 					params.put("GoodsSalesFlag", tv_status_id.getText().toString());
 					params.put("GoodsName", ed_name.getText().toString());

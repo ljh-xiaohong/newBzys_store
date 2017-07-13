@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Store</string>
+    <string name="app_name">富商</string>
     <string name="menu_home">主页</string>
     <string name="menu_order">订单</string>
 </resources>

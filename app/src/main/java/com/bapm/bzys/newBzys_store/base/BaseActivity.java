@@ -1,6 +1,7 @@
 package com.bapm.bzys.newBzys_store.base;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -11,6 +12,7 @@ import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -107,7 +109,20 @@ public class BaseActivity extends FragmentActivity{
 				});
 		builder.create().show();
 	}
-	
+	/**
+	 * 检查相机权限，如果不能打开相机则抛出异常
+	 */
+	public static void checkCameraPermissions() throws IOException {
+		try {
+			Camera camera = Camera.open();
+			if (camera != null) {
+				camera.release();
+				camera = null;
+			}
+		} catch (Exception e) {
+			throw new IOException();
+		}
+	}
 	/**
 	 * 拍照或从图库选择图片(PopupWindow形式)
 	 */
@@ -139,6 +154,22 @@ public class BaseActivity extends FragmentActivity{
 	 * 拍照获取图片
 	 */
 	private void takePhoto() {
+		//检查相机权限
+		try {
+			checkCameraPermissions();
+		} catch (IOException e) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(context);
+			builder.setTitle("照相权限被禁止，无法使用该功能!");
+			builder.setPositiveButton("知道了", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+				}
+			});
+			builder.setCancelable(false);
+			builder.create().show();
+
+		}
 		// 执行拍照前，应该先判断SD卡是否存在
 		String SDState = Environment.getExternalStorageState();
 		int currentapiVersion = android.os.Build.VERSION.SDK_INT;

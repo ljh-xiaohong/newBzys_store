@@ -47,7 +47,7 @@
             android:layout_width="fill_parent"
             android:layout_height="150px"
             android:background="@drawable/line_bottom">
-            <ImageView 
+            <ImageView
                 android:id="@+id/img_sitemap_icon"
                 android:layout_width="90px"
                 android:layout_height="90px"
@@ -168,7 +168,7 @@
             android:id="@+id/layout_account"
             android:layout_width="fill_parent"
             android:layout_height="150px"
-            android:background="@android:color/white" >
+            android:background="@drawable/line_bottom" >
             <ImageView
                 android:id="@+id/img_account_icon"
                 android:layout_width="90px"
@@ -231,7 +231,7 @@
             android:id="@+id/layout_book_information"
             android:layout_width="fill_parent"
             android:layout_height="150px"
-            android:background="@android:color/white" >
+            android:background="@drawable/line_bottom" >
             <ImageView
                 android:id="@+id/img_book_information_icon"
                 android:layout_width="90px"

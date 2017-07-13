@@ -1,16 +1,13 @@
 package com.bapm.bzys.newBzys_store.activity;
 
 import com.bapm.bzys.newBzys.R;
-import com.bapm.bzys.newBzys_store.util.AsyncImageLoader;
 import com.bapm.bzys.newBzys_store.util.GlideUtils;
 import com.bapm.bzys.newBzys_store.widget.SmoothImageButton;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
 public class SpaceImageDetailActivity extends Activity {

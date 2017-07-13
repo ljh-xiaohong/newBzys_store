@@ -80,16 +80,19 @@ public class HttpUtil {
         // 读取超时 --服务器响应比较慢，增大时间
         http.setReadTimeout(25000);
         http.setRequestMethod(method);
-        http.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-//        http.setRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) chrome/33.0.1750.146 Safari/537.36");
+		if(method.equals(_POST)){
+			// 设置字符集
+			http.setRequestProperty("Charset", "UTF-8");
+			// 设置文件类型
+			http.setRequestProperty("Content-Type", "application/json");
+//            http.setRequestProperty("User-Agent","Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) chrome/33.0.1750.146 Safari/537.36");
+			http.setDoOutput(true);
+		}
         if (null != headers && !headers.isEmpty()) {
             for (Entry<String, String> entry : headers.entrySet()) {
                 http.setRequestProperty(entry.getKey(), entry.getValue());
             }
         }
-        http.setDoOutput(true);
-        http.setDoInput(true);
-        http.connect();
         return http;
     }
 
@@ -148,7 +151,12 @@ public class HttpUtil {
 			            } else {
 			                http = initHttp(initParams(url, params), _GET, headers);
 			            }
-			            int statusCode = http.getResponseCode();
+						int statusCode;
+						try {
+							statusCode= http.getResponseCode();
+						}catch (Exception e){
+							statusCode = http.getResponseCode();
+						}
 						Log.e("statusCode",statusCode+"");
 						if(statusCode==HttpStatus.SC_OK){
 				            InputStream in = http.getInputStream();
@@ -213,7 +221,12 @@ public class HttpUtil {
 		            out.write((params.toString()).getBytes(DEFAULT_CHARSET));
 		            out.flush();
 		            out.close();
-		            int statusCode = http.getResponseCode();
+					int statusCode;
+					try {
+						statusCode= http.getResponseCode();
+					}catch (Exception e){
+						statusCode = http.getResponseCode();
+					}
 					Log.e("statusCode",statusCode+"");
 		            if(statusCode==HttpStatus.SC_OK){
 		            	InputStream in = http.getInputStream();
